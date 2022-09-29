@@ -23,6 +23,11 @@ namespace ContosoTeam3.Controllers
             return View();
         }
 
+        public IActionResult Sessions()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
