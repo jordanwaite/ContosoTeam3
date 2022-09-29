@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ContosoTeam3.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ContosoTeam3Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ContosoTeam3Context") ?? throw new InvalidOperationException("Connection string 'ContosoTeam3Context' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
