@@ -1,8 +1,51 @@
-﻿@{
+﻿@model IEnumerable<ContosoTeam3.Models.Session>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.Speaker)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.Date)
+        </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumSeats)
+            </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speaker)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NumSeats)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+

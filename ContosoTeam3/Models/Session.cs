@@ -7,7 +7,7 @@ namespace ContosoTeam3.Models
         public int Id { get; set; }
         public string? Subject { get; set; }
         public Speaker? Speaker { get; set; }
-        public string Details { get; set; }
+        public string? Details { get; set; }
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public int NumSeats { get; set; }

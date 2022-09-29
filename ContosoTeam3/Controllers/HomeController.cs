@@ -1,5 +1,7 @@
-﻿using ContosoTeam3.Models;
+﻿using ContosoTeam3.Data;
+using ContosoTeam3.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ContosoTeam3.Controllers
@@ -7,15 +9,17 @@ namespace ContosoTeam3.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ContosoTeam3Context _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ContosoTeam3Context context)
         {
             _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.Session.ToListAsync());
         }
 
         public IActionResult Privacy()
@@ -27,6 +31,11 @@ namespace ContosoTeam3.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult BookSeat()
+        {
+
         }
     }
 }
