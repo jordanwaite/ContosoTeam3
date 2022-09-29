@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dOkPVRygobQ0expjjS5mn3cNz2vkTKm8CGnBoYkQE7PHGwuo0/3P0u/TfZ2vLsdeTXLDBWJxZDe3N2dyZ3MgRw==",
+  "dgSpecHash": "ttonLgA0SyNLUeQzvG2HJSvMvRGgLc9J4eaLq9GE1Cb/+fPd7USzZBh3BSAHe4uYYOFmri5ePblFH3vfdJIWvA==",
   "success": true,
   "projectFilePath": "C:\\Users\\shado\\Source\\Repos\\jordanwaite\\ContosoTeam3\\ContosoTeam3\\ContosoTeam3.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\shado\\.nuget\\packages\\bootstrap\\5.2.1\\bootstrap.5.2.1.nupkg.sha512"
+  ],
   "logs": []
 }
